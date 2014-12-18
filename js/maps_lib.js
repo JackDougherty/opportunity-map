@@ -93,7 +93,7 @@ var MapsLib = {
       templateId: 2
     });
     MapsLib.polygon2 = new google.maps.KmlLayer({
-      url: 'http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz',
+      url: '../geo/RaceDotDensity250.kmz',   // OLD: http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz
       preserveViewport: true
     });
 

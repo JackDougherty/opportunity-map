@@ -80,8 +80,8 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
-    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - insert again further below - numbers are placeholders
-    MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;60%", "60&ndash;80%", "80&ndash;100%");
+    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - insert again further below 
+    MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high");
 
     // MODIFY if needed: defines background polygon1 and polygon2 layers
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
@@ -121,7 +121,7 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;60%", "60&ndash;80%", "80&ndash;100%"); //MODIFY to match 3 buckets in GFT
+      MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //MODIFY to match same line above
     }
 
     var address = $("#search_address").val();

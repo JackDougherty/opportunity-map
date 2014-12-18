@@ -45,7 +45,7 @@ var MapsLib = {
   recordNamePlural:   "results",
 
 
-  searchRadius:       805,            //in meters ~ 1/2 mile
+  searchRadius:       1610,            //in meters ~ 1 mile  This sets zoom level of address search results
   defaultZoom:        9,             //zoom level when map is loaded (bigger is more zoomed in)
   addrMarkerImage:    'images/blue-pushpin.png', // set to empty '' to hide searched address marker
   currentPinpoint:    null,
@@ -80,8 +80,8 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
-    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - insert again further below - numbers are placeholders
-    MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;60%", "60&ndash;80%", "80&ndash;100%");
+    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - insert again further below 
+    MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high");
 
     // MODIFY if needed: defines background polygon1 and polygon2 layers
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
@@ -93,7 +93,8 @@ var MapsLib = {
       templateId: 2
     });
     MapsLib.polygon2 = new google.maps.KmlLayer({
-      url: 'http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz'
+      url: 'http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz',
+      preserveViewport: true
     });
 
     //reset filters
@@ -120,7 +121,7 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;60%", "60&ndash;80%", "80&ndash;100%"); //MODIFY to match 3 buckets in GFT
+      MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //MODIFY to match same line above
     }
 
     var address = $("#search_address").val();

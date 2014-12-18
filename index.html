@@ -47,7 +47,7 @@
               <label>
                 within
                 <select id='search_radius'><!--MODIFY search radius displays if desired; values in meters; see maps_lib.js-->
-                  <option value='805'>1/2 mile</option>
+                  <option value='1610'>1 mile</option>
                   <option value='3220'>2 miles</option>
                   <option value='8050'>5 miles</option>
                   <option value='16100'>10 miles</option>
@@ -68,7 +68,9 @@
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='checkbox inline'>
-                  <input type='checkbox' name='types' id='cbRaceDot'/>
+                  <input type='checkbox' name='types' id='cbRaceDot' checked/>
+                  <span class='filter-box filter-green'></span>
+                  1 dot = ? people of color per census tract?
                 </label>
               </li>
             </ul>
@@ -88,7 +90,7 @@
                 </label>
               </li>
             </ul>
-            <h4>
+            <!--HIDE POINT LAYER <h4>
               Neighborhood assets
             </h4>
             <ul class='inputs-list unstyled'>
@@ -120,9 +122,9 @@
                   Daycare Facilities
                 </label>
               </li>
-            </ul>
+            </ul> -->
           </div>
-          <div class='alert alert-info' id='result_box' ><strong id='result_count'></strong></div>
+          <!-- HIDE RESULTS BOX  <div class='alert alert-info' id='result_box' ><strong id='result_count'></strong></div> -->
         </div>
         <div class='col-md-8'>
           <noscript>

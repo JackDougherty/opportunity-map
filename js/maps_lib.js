@@ -101,7 +101,7 @@ var MapsLib = {
     var loadRadius = MapsLib.convertToPlainString($.address.parameter('radius'));
     if (loadRadius != "") $("#search_radius").val(loadRadius);
     else $("#search_radius").val(MapsLib.searchRadius);
-    $(":checkbox").prop("checked", "checked");   //if active, all checkboxes on by default
+    // $(":checkbox").prop("checked", "checked");   //if active, all checkboxes on by default
     $("#result_box").hide();
 
    //-----custom initializers -- default setting to display Polygon1 layer
@@ -128,12 +128,23 @@ var MapsLib = {
 
     var whereClause = MapsLib.locationColumn + " not equal to ''";
 
-//-----custom filters
+//-----custom filter for race dot density KML layer
 
 if ($("#cbRaceDot").is(':checked')) {
   MapsLib.polygon2.setMap(map);
 }
-//-----end custom filters
+
+//-----custom filters for point data layer
+  
+    //-- NUMERICAL OPTION - to display and filter a column of numerical data in your Google Fusion Table
+        var type_column = "'TypeNum'";
+    var searchType = type_column + " IN (-1,";
+    if ( $("#cbType1").is(':checked')) searchType += "1,";
+    if ( $("#cbType2").is(':checked')) searchType += "2,";
+    if ( $("#cbType3").is(':checked')) searchType += "3,";
+    if ( $("#cbType4").is(':checked')) searchType += "4,";
+    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
+    //-------end of custom filters--------
 
     if (address != "") {
       if (address.toLowerCase().indexOf(MapsLib.locationScope) == -1)

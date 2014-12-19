@@ -29,7 +29,7 @@ var MapsLib = {
   // https://www.google.com/fusiontables/DataSource?docid=1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD  Merge of 2010 CT Census Tracts for Mobility Map and oppdata
   // https://www.google.com/fusiontables/DataSource?docid=1USNX8O7rNhgTRY6EvrXQsXRFR2b0m_E9nsC_EXDo  Currently in use
   
-  polygon2URL:    "../geo/RaceDotDensity250.kmz",  // OLD: "http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz", // CHANGE THIS LATER
+  polygon2URL:    "http://jackdougherty.github.io/opportunity-map/js/RaceDotDensity250.kmz",  // Unless someone has relative URL solution, CHANGE to final absolute location
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.

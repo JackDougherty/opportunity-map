@@ -123,7 +123,7 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //MODIFY to match same line above
+      // MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //MODIFY to match same line above
     }
 
     var address = $("#search_address").val();

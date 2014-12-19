@@ -82,7 +82,7 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
-    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - insert again further below 
+    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - 
     MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high");
 
     // MODIFY if needed: defines background polygon1 and polygon2 layers
@@ -123,7 +123,7 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      // MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //MODIFY to match same line above
+      // MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //NOT needed because polygon layer is never turned off
     }
 
     var address = $("#search_address").val();

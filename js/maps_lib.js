@@ -25,11 +25,13 @@ var MapsLib = {
   // https://www.google.com/fusiontables/DataSource?docid=1qk9z46VakTMrA7zLpt8y4SfQos3FGsWhRTrww1yZ   Final Point Data Table
 
   polygon1TableID:    "1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD", //Census 2000 tracts with Opportunity report 2009 scores
-  // IMPORTANT to be sure that we are displaying the correct polygon layer. Compare with:
   // https://www.google.com/fusiontables/DataSource?docid=1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD  Merge of 2010 CT Census Tracts for Mobility Map and oppdata
-  // https://www.google.com/fusiontables/DataSource?docid=1USNX8O7rNhgTRY6EvrXQsXRFR2b0m_E9nsC_EXDo  Currently in use
   
-  polygon2URL:    "http://jackdougherty.github.io/opportunity-map/js/RaceDotDensity250.kmz",  // Unless someone has relative URL solution, CHANGE to final absolute location
+  polygon2TableID:    "1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2", //CT town boundaries
+  // https://www.google.com/fusiontables/DataSource?docid=1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2
+  
+  polygon3URL:    "http://jackdougherty.github.io/opportunity-map/js/RaceDotDensity250.kmz",  // Unless someone has relative URL solution, CHANGE to final absolute location
+  // Natasha V. at MAGIC created this race dot-density map as a transparent KML layer
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -85,7 +87,7 @@ var MapsLib = {
     //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - 
     MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high");
 
-    // MODIFY if needed: defines background polygon1 and polygon2 layers
+    // MODIFY if needed: defines map layers 
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
       query: {
         from:   MapsLib.polygon1TableID,
@@ -94,8 +96,15 @@ var MapsLib = {
       styleId: 2,
       templateId: 2
     });
-    MapsLib.polygon2 = new google.maps.KmlLayer(MapsLib.polygon2URL, {
-      //url: polygon2URL,   // OLD: http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz
+    MapsLib.polygon2 = new google.maps.FusionTablesLayer({
+      query: {
+        from:   MapsLib.polygon2TableID,
+        select: "geometry"
+      },
+      styleId: 2,
+      templateId: 2
+    });
+    MapsLib.polygon3 = new google.maps.KmlLayer(MapsLib.polygon3URL, {
       preserveViewport: true
     });
 
@@ -131,10 +140,13 @@ var MapsLib = {
 
     var whereClause = MapsLib.locationColumn + " not equal to ''";
 
-//-----custom filter for race dot density KML layer
+//-----custom filters for town boundary polygons and race dot density KML layer, which are checkboxes, not radio buttons
+if ($("#cbTown").is(':checked')) {
+  MapsLib.polygon2.setMap(map);
+}
 
 if ($("#cbRaceDot").is(':checked')) {
-  MapsLib.polygon2.setMap(map);
+  MapsLib.polygon3.setMap(map);
 }
 
 //-----custom filters for point data layer
@@ -226,8 +238,10 @@ if ($("#cbRaceDot").is(':checked')) {
       MapsLib.searchrecords.setMap(null);
     if (MapsLib.polygon1 != null)
       MapsLib.polygon1.setMap(null);
-    if (MapsLib.polygonRaceDot != null) // REMOVE THIS?
-      MapsLib.polygonRaceDot.setMap(null);
+    if (MapsLib.polygon2 !=null)
+      MapsLib.polygon2.setMap(null);
+    if (MapsLib.polygon3 != null) // CONFIRM IF THIS WORKS
+      MapsLib.polygon3.setMap(null);
     if (MapsLib.addrMarker != null)
       MapsLib.addrMarker.setMap(null);
     if (MapsLib.searchRadiusCircle != null)

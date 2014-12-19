@@ -134,12 +134,6 @@ var MapsLib = {
       MapsLib.polygon1.setMap(map);
       // MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high"); //NOT needed because polygon layer is never turned off
     }
-
-    var address = $("#search_address").val();
-    MapsLib.searchRadius = $("#search_radius").val();
-
-    var whereClause = MapsLib.locationColumn + " not equal to ''";
-
 //-----custom filters for town boundary polygons and race dot density KML layer, which are checkboxes, not radio buttons
 if ($("#cbTown").is(':checked')) {
   MapsLib.polygon2.setMap(map);
@@ -150,6 +144,12 @@ if ($("#cbRaceDot").is(':checked')) {
 }
 
 //-----custom filters for point data layer
+    var address = $("#search_address").val();
+    MapsLib.searchRadius = $("#search_radius").val();
+
+    var whereClause = MapsLib.locationColumn + " not equal to ''";
+
+
   
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your Google Fusion Table
         var type_column = "'TypeNum'";

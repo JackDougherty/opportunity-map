@@ -28,6 +28,8 @@ var MapsLib = {
   // IMPORTANT to be sure that we are displaying the correct polygon layer. Compare with:
   // https://www.google.com/fusiontables/DataSource?docid=1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD  Merge of 2010 CT Census Tracts for Mobility Map and oppdata
   // https://www.google.com/fusiontables/DataSource?docid=1USNX8O7rNhgTRY6EvrXQsXRFR2b0m_E9nsC_EXDo  Currently in use
+  
+  polygon2URL:    "../geo/RaceDotDensity250.kmz",  // OLD: "http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz", // CHANGE THIS LATER
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -92,8 +94,8 @@ var MapsLib = {
       styleId: 2,
       templateId: 2
     });
-    MapsLib.polygon2 = new google.maps.KmlLayer({
-      url: 'http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz',
+    MapsLib.polygon2 = new google.maps.KmlLayer(MapsLib.polygon2URL, {
+      //url: polygon2URL,   // OLD: http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz
       preserveViewport: true
     });
 

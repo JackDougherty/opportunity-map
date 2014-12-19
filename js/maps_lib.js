@@ -94,8 +94,8 @@ var MapsLib = {
       styleId: 2,
       templateId: 2
     });
-    MapsLib.polygon2 = new google.maps.KmlLayer({
-      url: polygon2URL,   // OLD: http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz
+    MapsLib.polygon2 = new google.maps.KmlLayer(polygon2URL {
+      //url: polygon2URL,   // OLD: http://magic.lib.uconn.edu/test/n/kml/DotDens250.kmz
       preserveViewport: true
     });
 

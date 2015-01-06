@@ -1,0 +1,47 @@
+a { color: #4B58A6; }
+a:hover { color: #4B58A6; }
+
+#map_canvas img {
+  max-width: none;
+}
+
+/* MODIFY polygon legend colors to match 5-color buckets in your Google Fusion Table. See also http://ColorBrewer2.org*/
+#legend-one { border-top: 10px solid #ffe1c2; }
+#legend-two { border-top: 10px solid #ffcd7f; }
+#legend-three { border-top: 10px solid #ffc366; }
+#legend-four { border-top: 10px solid #ffaf33; }
+#legend-five { border-top: 10px solid #ff8e14; }
+#polygon-legend { background: none; clear: both; margin-bottom: 0.3em; padding: 8px 0 0 0; margin: 15px 0 0 0; list-style: none; }
+#polygon-legend li { width: 18%; float: left; margin: 0 1% 10px 0; white-space: nowrap; text-align: center; font-size: 11px; color: #77787b; }
+
+.filter-yellow { background-color: #FBF358; }
+.filter-green { background-color: #00E13C; }
+.filter-blue { background-color: #5781FC; }
+.filter-purple { background-color: #7C54FB; }
+.filter-red { background-color: #FB6353; }
+
+/* remove markers before unordered list */
+ul.unstyled {list-style-type:none;}
+/* blocking and spacing for polygon list*/
+.radio {display:inline-block; margin-top: 0px; margin-bottom: 0px;}
+
+.filter-box {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+canvas {-ms-touch-action: double-tap-zoom;}
+
+/* customizations for iframe template */
+.iframe #map_canvas { height: 500px; }
+.iframe .well { margin-bottom: 5px; }
+.iframe .alert { margin-top: 5px; }

@@ -20,6 +20,9 @@ a:hover { color: #4B58A6; }
 .filter-purple { background-color: #7C54FB; }
 .filter-red { background-color: #FB6353; }
 
+/*special blue for Race Dot*/
+.filter-blue-racedot {background-color: #004DA8; }
+
 /* remove markers before unordered list */
 ul.unstyled {list-style-type:none;}
 /* blocking and spacing for polygon list*/

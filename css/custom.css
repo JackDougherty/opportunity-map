@@ -6,11 +6,11 @@ a:hover { color: #4B58A6; }
 }
 
 /* MODIFY polygon legend colors to match 5-color buckets in your Google Fusion Table. See also http://ColorBrewer2.org*/
-#legend-one { border-top: 10px solid #ffe1c2; }
-#legend-two { border-top: 10px solid #ffcd7f; }
-#legend-three { border-top: 10px solid #ffc366; }
-#legend-four { border-top: 10px solid #ffaf33; }
-#legend-five { border-top: 10px solid #ff8e14; }
+#legend-one { border-top: 10px solid #fff5cc; }
+#legend-two { border-top: 10px solid #ffdb94; }
+#legend-three { border-top: 10px solid #ffb84d; }
+#legend-four { border-top: 10px solid #ff9933; }
+#legend-five { border-top: 10px solid #ff7519; }
 #polygon-legend { background: none; clear: both; margin-bottom: 0.3em; padding: 8px 0 0 0; margin: 15px 0 0 0; list-style: none; }
 #polygon-legend li { width: 18%; float: left; margin: 0 1% 10px 0; white-space: nowrap; text-align: center; font-size: 11px; color: #77787b; }
 

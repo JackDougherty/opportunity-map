@@ -24,8 +24,7 @@ var MapsLib = {
   fusionTableId:      "1qk9z46VakTMrA7zLpt8y4SfQos3FGsWhRTrww1yZ", //Point data layer
   // https://www.google.com/fusiontables/DataSource?docid=1qk9z46VakTMrA7zLpt8y4SfQos3FGsWhRTrww1yZ   Final Point Data Table
 
-  polygon1TableID:    "1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD", //Census 2000 tracts with Opportunity report 2009 scores
-  // https://www.google.com/fusiontables/DataSource?docid=1ulLjrVynDtTiIypTFK333HmC7xvJmm707rgMSgyD  Merge of 2010 CT Census Tracts for Mobility Map and oppdata
+  polygon1TableID:    "1VeRnEThojzHXw2PSiKJtIr_dPPqd9huEopV6NrQi", //Opportunity-index-values-2014 with Census 2010 tracts
   
   polygon2TableID:    "1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2", //CT town boundaries
   // https://www.google.com/fusiontables/DataSource?docid=1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2

@@ -24,7 +24,8 @@ var MapsLib = {
   fusionTableId:      "1qk9z46VakTMrA7zLpt8y4SfQos3FGsWhRTrww1yZ", //Point data layer
   // https://www.google.com/fusiontables/DataSource?docid=1qk9z46VakTMrA7zLpt8y4SfQos3FGsWhRTrww1yZ   Final Point Data Table
 
-  polygon1TableID:    "1VeRnEThojzHXw2PSiKJtIr_dPPqd9huEopV6NrQi", //Opportunity-index-values-2014 with Census 2010 tracts
+  polygon1TableID:    "19hpBpYE3GaHGZL79CJHN77wRHsiUDNnyEgLvvyjB", // Opportunity-index-2014-updated-2015-02-10 (with Census 2010 tracts polygons)
+  // https://www.google.com/fusiontables/data?docid=19hpBpYE3GaHGZL79CJHN77wRHsiUDNnyEgLvvyjB#map:id=3
   
   polygon2TableID:    "1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2", //CT town boundaries
   // https://www.google.com/fusiontables/DataSource?docid=1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2

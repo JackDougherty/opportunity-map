@@ -26,11 +26,11 @@ var MapsLib = {
 
   polygon1TableID:    "15BTIAXFlMroov7wbK_TF6ChW91Km32vhHbKNgM8u", // Opportunity-index-2014-updated-2015-02-10 (with Census 2010 tracts polygons)
   // https://www.google.com/fusiontables/DataSource?docid=15BTIAXFlMroov7wbK_TF6ChW91Km32vhHbKNgM8u
-  
+
   polygon2TableID:    "1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2", //CT town boundaries
   // https://www.google.com/fusiontables/DataSource?docid=1qm7D1p-nifgo9s6Hw4xW8G7RG8slwTNmd_OeGsI2
-  
-  polygon3URL:    "http://jackdougherty.github.io/opportunity-map/js/RaceDotDensity250.kmz",  // Unless someone has relative URL solution, CHANGE to final absolute location
+
+  polygon3URL:    "http://jackdougherty.github.io/opportunity-map/js/RaceDotDensity250.kml",  // Previously .kmz; Unless someone has relative URL solution, CHANGE to final absolute location
   // Natasha V. at MAGIC created this race dot-density map as a transparent KML layer
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
@@ -84,10 +84,10 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
-    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  - 
+    //MODIFY to match 5-bucket GFT values of pre-checked polygon1  -
     MapsLib.setDemographicsLabels("very low", "low", "moderate", "high", "very high");
 
-    // MODIFY if needed: defines map layers 
+    // MODIFY if needed: defines map layers
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
       query: {
         from:   MapsLib.polygon1TableID,
@@ -150,7 +150,7 @@ if ($("#cbRaceDot").is(':checked')) {
     var whereClause = MapsLib.locationColumn + " not equal to ''";
 
 
-  
+
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your Google Fusion Table
         var type_column = "'TypeNum'";
     var searchType = type_column + " IN (-1,";
@@ -230,7 +230,7 @@ if ($("#cbRaceDot").is(':checked')) {
     });
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
-  }, 
+  },
 
   // MODIFY if you change the number of Polygon layers; TRY designated PolygonOFF layer
   clearSearch: function() {

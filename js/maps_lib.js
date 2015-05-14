@@ -108,7 +108,7 @@ var MapsLib = {
     });
     MapsLib.polygon3 = new google.maps.KmlLayer(MapsLib.polygon3URL, {
       preserveViewport: true,
-      zIndex: 3
+      zIndex: 1000
     });
 
     //reset filters

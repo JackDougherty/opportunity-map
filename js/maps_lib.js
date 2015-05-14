@@ -94,7 +94,8 @@ var MapsLib = {
         select: "geometry"
       },
       styleId: 2,
-      templateId: 2
+      templateId: 2,
+      zIndex: 1
     });
     MapsLib.polygon2 = new google.maps.FusionTablesLayer({
       query: {
@@ -102,7 +103,8 @@ var MapsLib = {
         select: "geometry"
       },
       styleId: 2,
-      templateId: 2
+      templateId: 2,
+      zIndex: 2
     });
     MapsLib.polygon3 = new google.maps.KmlLayer(MapsLib.polygon3URL, {
       preserveViewport: true,

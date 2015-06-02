@@ -85,6 +85,11 @@
             </ul>
             <h4>Opportunity Index</h4>
             <ul class='inputs-list unstyled'>
+                <li>
+                  <label class='checkbox inline'>
+                    <input type='checkbox' name='types' id='rbPolygon1'/><!--previously: class='hidden'-->
+                  </label>
+                </li>
               <ol id='polygon-legend'><!--MODIFY dynamic legend size and color in custom.css; labels in maps_lib.js -->
                 <li id='legend-one'></li>
                 <li id='legend-two'></li>
@@ -93,11 +98,6 @@
                 <li id='legend-five'></li>
               </ol>
               <div class='clear'></div>
-              <li>
-                <label class='radio inline'>
-                  <input type='radio' name='types' class='hidden' id='rbPolygon1'/><!--MODIFY and remove hidden class if desired-->
-                </label>
-              </li>
             </ul>
             <!--HIDE POINT LAYER <h4>
               Neighborhood assets
